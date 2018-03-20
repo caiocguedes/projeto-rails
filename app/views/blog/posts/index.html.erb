@@ -1,0 +1,18 @@
+<% provide(:page_title, 'Todos os posts') %>
+<% provide(:blog_active, 'active') %>
+
+
+<div class="row">
+  <%= render @posts %>
+  <%= will_paginate @posts %>
+
+  
+</div> 
+
+<div>
+	<p>
+	  Download:
+	  <%= link_to "CSV", posts_path(format: "csv") %> |
+	  <%= link_to "Excel", posts_path(format: "xls") %>
+	</p>
+</div>
